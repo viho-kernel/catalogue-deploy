@@ -18,7 +18,7 @@ pipeline {
 
     parameters {
         string(name: 'version', defaultValue: '', description: 'What is Artifact Version?')
-        choice(name: 'environment', choices: '', description: 'What is the Environment?')
+        choice(name: 'environment', choices: [''], description: 'What is the Environment?')
     }
 
     stages {
