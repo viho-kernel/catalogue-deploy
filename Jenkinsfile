@@ -22,7 +22,7 @@ pipeline {
     }
 
     stages {
-        stage('version') {
+        stage('Print version') {
             steps {
                 script {
                      echo "version: ${params.version}"
