@@ -17,9 +17,10 @@ pipeline {
     }
 
     parameters {
-        string(name: 'version', defaultValue: '', description: 'What is Artifact Version?')
-        choice(name: 'environment', defaultValue: 'dev', description: 'What is the Environment?')
-    }
+    string(name: 'version', defaultValue: '', description: 'What is Artifact Version?')
+    choice(name: 'environment', choices: ['dev','qa','prod'], defaultValue: 'dev', description: 'What is the Environment?')
+}
+
 
     stages {
         stage('Print version') {
