@@ -18,15 +18,17 @@ pipeline {
 
     parameters {
         string(name: 'version', defaultValue: '1.0.0', description: 'What is Artifact Version?')
-        choice(name: 'environment', choices: ['dev'], description: 'What is the Environment?')
+        choice(name: 'environment', choices: ['dev', 'prod'], description: 'What is the Environment?')
     }
 
     stages {
         stage('Print version') {
             steps {
                 script {
+                    sh """
                      echo "version: ${params.version}"
                     echo "environment: ${params.environment}"
+                    """
                 }
             }
         }
