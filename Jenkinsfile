@@ -12,12 +12,15 @@ pipeline {
     }
 
     parameters {
-    string(name: 'version', defaultValue: '', description: 'What is the artifact version?')
-    string(name: 'environment', defaultValue: 'dev', description: 'What is environment?')
-    booleanParam(name: 'Destroy', defaultValue: 'false', description: 'What is Destroy?')
-    booleanParam(name: 'Create', defaultValue: 'false', description: 'What is Create?')
+
+parameters {
+    string(name: 'version', defaultValue: '', description: 'Artifact version')
+    string(name: 'environment', defaultValue: 'dev', description: 'Environment')
+    booleanParam(name: 'Destroy', defaultValue: false, description: 'Destroy infra')
+    booleanParam(name: 'Create', defaultValue: false, description: 'Create infra')
 }
 
+    }
 
     stages {
         stage('Print version') {
